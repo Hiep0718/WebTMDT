@@ -1,0 +1,64 @@
+.carousel-2-prev,
+.carousel-2-next {
+    width: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.carousel-2-prev {
+    left: -3%;
+}
+
+.carousel-2-next {
+    right: -3%;
+}
+
+.carousel-2-prev-icon,
+.carousel-2-next-icon {
+    background-color: #004f1d;
+    border-radius: 50%;
+}
+
+/* Định dạng cho nút điều hướng của carousel thứ hai */
+.carousel-2-prev,
+.carousel-2-next {
+    width: 60px; /* Kích thước của nút */
+    height: 60px; /* Kích thước của nút */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(16, 190, 60, 0.7); /* Màu nền bán trong suốt */
+    border-radius: 50%; /* Hình dạng tròn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Đổ bóng cho nút */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển tiếp */
+    z-index: 10; /* Đảm bảo nút nằm trên cùng */
+    border: 2px solid #fff; /* Viền trắng xung quanh nút */
+}
+
+/* Hiệu ứng khi hover */
+.carousel-2-prev:hover,
+.carousel-2-next:hover {
+    background-color: rgba(0, 98, 5, 0.9); /* Màu nền tối hơn khi hover */
+    transform: scale(1.15); /* Phóng to một chút khi hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* Đổ bóng đậm hơn khi hover */
+}
+
+/* Định dạng biểu tượng cho carousel thứ hai */
+.carousel-2-prev-icon,
+.carousel-2-next-icon {
+    font-size: 24px; /* Kích thước biểu tượng */
+    color: #fff; /* Màu biểu tượng */
+}
+
+/* Điều chỉnh vị trí của các nút */
+.carousel-2-prev {
+    left: -80px; /* Đặt nút bên trái ngoài vùng nội dung */
+}
+
+.carousel-2-next {
+    right: -80px; /* Đặt nút bên phải ngoài vùng nội dung */
+}

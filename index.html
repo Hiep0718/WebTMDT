@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bình Định Market</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="WebTMDT/css/menu.css">
+    <link rel="icon" href="WebTMDT/img/fn3-03.png" type="image/png">
+    <link rel="stylesheet" href="WebTMDT/css/card.css">
+    <link rel="stylesheet" href="WebTMDT/css/form.css">
+    <link rel="stylesheet" href="WebTMDT/css/home.css">
+    <style>
+        .carousel-item {
+            position: relative; /* Đặt vị trí tương đối cho các item carousel */
+        }
+
+        .order-button {
+            position: absolute; /* Đặt vị trí tuyệt đối để nút nằm đè lên hình */
+            bottom: 30px; /* Đặt nút cách đáy 20px */
+            left: 27%; /* Đặt nút ở giữa theo chiều ngang */
+            transform: translateX(-50%); /* Căn giữa nút theo trục X */
+            background-color: #ffffff; /* Màu nền trắng */
+            border: 2px solid #00712D; /* Viền màu xanh đậm */
+            color: #00712D; /* Màu chữ xanh đậm */
+            padding: 10px 20px; /* Khoảng cách nội dung nút */
+            font-size: 20px; /* Kích thước chữ */
+            font-weight: bold; /* Chữ đậm */
+            border-radius: 30px; /* Bo tròn góc nút */
+            text-transform: uppercase; /* Chữ viết hoa */
+            cursor: pointer; /* Con trỏ chuột */
+            transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+        }
+
+        .order-button:hover {
+            background-color: #00712D; /* Màu nền khi hover */
+            color: #ffffff; /* Màu chữ khi hover */
+        }
+
+    </style>
+</head>
+<body>
+    <div id="purchase-form" style="display: none;">
+        <button class="close-button" onclick="closeForm()">×</button>
+        <h3>Nhập thông tin mua hàng</h3>
+        <form id="order-form">
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Số điện thoại:</label>
+            <input type="text" id="phone" name="phone" required>
+            <label for="address">Địa chỉ:</label>
+            <input type="text" id="address" name="address" required>
+            <button type="submit" class="btn btn-primary">Gửi thông tin</button>
+        </form>
+    </div>
+    <div id="toast" class="toast">
+        Đặt hàng thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất.
+    </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light p-0">
+    <img src="WebTMDT/img/fn3-03.png" alt="" width="auto" height="65px" style="padding-left: 155px;">
+    <img src="WebTMDT/img/ocop11-removebg-preview.png" alt="" width="auto" height="50px" style="padding-left: 200px;"> 
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto" style="padding-left: 10px;">
+                <li class="nav-item" id="Home">
+                    <a class="nav-link" aria-current="page" href="#" style="font-weight: bold;">Trang chủ</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link d-flex align-items-center" href="#" id="navbarDropdown" role="button">
+                        Danh Mục 
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="WebTMDT/html/DanhMucSanPham.html">Tất cả</a></li>
+                        <li><a class="dropdown-item" href="WebTMDT/html/BanhKeo.html">Bánh, kẹo các loại</a></li>
+                        <li><a class="dropdown-item" href="WebTMDT/html/DauAn.html">Dầu ăn, nước chấm, gia vị</a></li>
+                        <li><a class="dropdown-item" href="WebTMDT/html/Ruou.html">Rượu</a></li>
+                        <li><a class="dropdown-item" href="WebTMDT/html/DongLanh.html">Sản phẩm đông mát</a></li>
+                        <li><a class="dropdown-item" href="WebTMDT/html/TraiCay.html">Trái cây</a></li>
+                        <li><a class="dropdown-item" href="WebTMDT/html/TraKho.html">Trà khô, túi lọc</a></li>
+                        <li><a class="dropdown-item" href="WebTMDT/html/Khac.html">Khác</a></li>
+                    </ul>
+                </li>                                  
+                <li class="nav-item">
+                    <a class="nav-link" href="WebTMDT/html/ChinhSach.html">Chính sách</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="WebTMDT/html/About.html">Về chúng tôi</a>
+                </li>
+            </ul>
+            <form class="d-flex mx-auto search-container">
+                <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                <span class="search-icon">
+                    <img src="WebTMDT/img/528-5289662_magnifier-glass-find-search-loop-blue-google-search-removebg-preview.png" alt="Search" width="30px" height="30px">
+                </span>
+            </form>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-outline-light me-2" type="button">Đăng nhập</button>
+                <button class="btn btn-outline-light me-3" type="button">Đăng ký</button>
+                <!-- Giỏ hàng -->
+                <div class="cart-icon">
+                    <a href="#"><img src="WebTMDT/img/gioHang-removebg-preview.png" alt="Cart" width="30" height="30"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="col">
+        <!-- Carousel -->
+        <div id="carouselExampleIndicators" class="carousel slide mt-3" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="WebTMDT/img/Home/bia3.jpg" class="d-block w-100" alt="Slide 1">
+                    <button class="order-button buy-now-button">ĐẶT MUA NGAY</button>
+                </div>
+                <div class="carousel-item">
+                    <img src="WebTMDT/img/Home/Bia2.jpg" class="d-block w-100" alt="Slide 2">
+                    <button class="order-button buy-now-button">ĐẶT MUA NGAY</button>
+
+                </div>
+                <div class="carousel-item">
+                    <img src="WebTMDT/img/Home/Bia1.jpg" class="d-block w-100" alt="Slide 3">
+                    <button class="order-button buy-now-button">ĐẶT MUA NGAY</button>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+ </div>
+
+<!-- Product Section -->
+<div class="container my-5">
+    <div id="carousel-2" class="carousel slide my-5">
+        <h4 style="color: #004f1d; font-size: 40px;">SẢN PHẨM NỔI BẬT</h4>
+        <hr>
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="WebTMDT/html/ChiTietSanPhamDEMO.html" class="card-link">
+                            <div class="card">
+                                <img src="WebTMDT/img/SanPham/Bánh thuyền hạt Khánh Giang.jpg" class="card-img-top" alt="Product 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bánh thuyền hạt Khánh Giang (hộp)</h5>
+                                    <p class="card-price">85.000 VND</p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm buy-now-button">Mua ngay</button>
+                                        <button class="btn btn-outline-success btn-sm">Thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="WebTMDT/html/ChiTietBanhTrangSaChi.html" class="card-link">
+                            <div class="card">
+                                <img src="WebTMDT/img/SanPham/BanhTrangRongBienSaChi/anh1.png" class="card-img-top" alt="Product 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bánh tráng rong biển Sachi (gói)</h5>
+                                    <p class="card-price">17.000 VND</p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm buy-now-button">Mua ngay</button>
+                                        <button class="btn btn-outline-success btn-sm">Thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="WebTMDT/html/ChiTietBanhHongBaDien.html" class="card-link">
+                            <div class="card">
+                                <img src="WebTMDT/img/SanPham/BanhHongBaDien/banh-hong-me-xung.jpg" class="card-img-top" alt="Product 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bánh Hồng Bà Điền (0.5kg)</h5>
+                                    <p class="card-price">40.000 VND</p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm buy-now-button">Mua ngay</button>
+                                        <button class="btn btn-outline-success btn-sm">Thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="WebTMDT/html/ChiTiecBanhIt.html" class="card-link">
+                            <div class="card">
+                                <img src="WebTMDT/img/SanPham/BanhItLaGaiHD/454378650_1615263825708508_6954225287777527143_n.jpg" class="card-img-top" alt="Product 4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bánh ít lá gai Hoàng Đông (Bánh)</h5>
+                                    <p class="card-price">3.500 VND</p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm buy-now-button">Mua ngay</button>
+                                        <button class="btn btn-outline-success btn-sm">Thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="WebTMDT/html/ChiTiecBanhIt.html" class="card-link">
+                            <div class="card">
+                                <img src="WebTMDT/img/SanPham/BanhItLaGaiHD/454378650_1615263825708508_6954225287777527143_n.jpg" class="card-img-top" alt="Product 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bánh ít lá gai Hoàng Đông (Bánh)</h5>
+                                    <p class="card-price"> 3.500 VND </p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm buy-now-button">Mua ngay</button>
+                                        <button class="btn btn-outline-success btn-sm">Thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="WebTMDT/html/ChiTiecDauPhongCC.html" class="card-link">
+                            <div class="card">
+                                <img src="WebTMDT/img/SanPham/DauDauPhongCC/dầu phộng công chính.png" class="card-img-top" alt="Product 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dầu phộng Công Chính (chai 1 lít)</h5>
+                                    <p class="card-price"> 100.000 VND </p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm buy-now-button">Mua ngay</button>
+                                        <button class="btn btn-outline-success btn-sm">Thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="WebTMDT/html/ChiTietDauMyHoa.html" class="card-link">
+                            <div class="card">
+                                <img src="WebTMDT/img/SanPham/DauPhongMyHoa/Dầu phộng Mỹ Hòa.png" class="card-img-top" alt="Product 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dầu phộng Mỹ Hòa (chai 1 lít)</h5>
+                                    <p class="card-price"> 200.000 VND </p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm buy-now-button">Mua ngay</button>
+                                        <button class="btn btn-outline-success btn-sm">Thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="WebTMDT/html/ChiTietNuocMam.html" class="card-link">
+                            <div class="card">
+                                <img src="WebTMDT/img/SanPham/NuocMamNhiThaiAn/Nước mắm nhĩ Thái An.png" class="card-img-top" alt="Product 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Nước mắm nhĩ Thái An (chai)</h5>
+                                    <p class="card-price"> 50.000 VND </p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm buy-now-button">Mua ngay</button>
+                                        <button class="btn btn-outline-success btn-sm">Thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="WebTMDT/html/ChiTietRuouDongT.html" class="card-link">
+                            <div class="card">
+                                <img src="WebTMDT/img/SanPham/RuouDongTrung/Rượu Đông trùng hạ thảo Lộc Tín.png" class="card-img-top" alt="Product 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Rượu Đông trùng hạ thảo Lộc Tín  </h5>
+                                    <p class="card-price"> 700.000 VND</p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm buy-now-button">Mua ngay</button>
+                                        <button class="btn btn-outline-success btn-sm">Thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="WebTMDT/html/ChiTietRuouNuocNong.html" class="card-link">
+                            <div class="card">
+                                <img src="WebTMDT/img/SanPham/RuouNuocNong/407113005_885895410205298_8464141576460451553_n.jpg" class="card-img-top" alt="Product 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Rượu nước nóng</h5>
+                                    <p class="card-price"> 500.000 VND </p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm buy-now-button">Mua ngay</button>
+                                        <button class="btn btn-outline-success btn-sm">Thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="WebTMDT/html/CHiTietChaLuaNgocNga.html" class="card-link">
+                            <div class="card">
+                                <img src="WebTMDT/img/SanPham/ChaLua/Chả lụa Ngọc Nga.jpg" class="card-img-top" alt="Product 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Chả lụa Ngọc Nga</h5>
+                                    <p class="card-price"> 140.000 VND </p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm buy-now-button">Mua ngay</button>
+                                        <button class="btn btn-outline-success btn-sm">Thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="WebTMDT/html/ChiTietBuoiDaXanh.html" class="card-link">
+                            <div class="card">
+                                <img src="WebTMDT/img/SanPham/BuoiAnLao/Bưởi da xanh An Lão.jpg" class="card-img-top" alt="Product 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bưởi da xanh An Lão (2kg)</h5>
+                                    <p class="card-price"> 210.000 VND </p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm buy-now-button">Mua ngay</button>
+                                        <button class="btn btn-outline-success btn-sm">Thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev carousel-2-prev" href="#carousel-2" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next carousel-2-next" href="#carousel-2" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </a>
+    </div>    
+</div>
+
+<!-- Footer -->
+<footer class="footer-bg text-white text-center text-lg-start">
+    <div class="container p-4">
+        <div class="row">
+            <!-- Sản phẩm -->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Sản phẩm</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#!" class="text-white" style="text-decoration: none;">Bánh, kẹo các loại</a></li>
+                    <li><a href="#!" class="text-white" style="text-decoration: none;">Dầu ăn, nước chấm, gia vị</a></li>
+                    <li><a href="#!" class="text-white" style="text-decoration: none;">Rượu</a></li>
+                    <li><a href="#!" class="text-white" style="text-decoration: none;">Sản phẩm đông mát</a></li>
+                    <li><a href="#!" class="text-white" style="text-decoration: none;">Trái cây</a></li>
+                    <li><a href="#!" class="text-white" style="text-decoration: none;">Trà khô, túi lọc</a></li>
+                    <li><a href="#!" class="text-white" style="text-decoration: none;">Khác</a></li>
+                </ul>
+            </div>
+            
+            <!-- Thương hiệu -->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Thương hiệu</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#!" class="text-white" style="text-decoration: none;">Bà Điền</a></li>
+                    <li><a href="#!" class="text-white" style="text-decoration: none;">Sachi</a></li>
+                    <li><a href="#!" class="text-white" style="text-decoration: none;">Khánh Giang</a></li>
+                    <li><a href="#!" class="text-white" style="text-decoration: none;">Thành Tâm</a></li>
+                    <li><a href="#!" class="text-white" style="text-decoration: none;">Ngọc Nga</a></li>
+                    <li><a href="#!" class="text-white" style="text-decoration: none;">Khác</a></li>
+                </ul>
+            </div>
+            
+            <!-- Chính sách -->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Chính sách</h5>
+                <ul class="list-unstyled">
+                    <li><a href="WebTMDT/html/ChinhSach.html" class="text-white" style="text-decoration: none;">Giao hàng</a></li>
+                    <li><a href="WebTMDT/html/ChinhSach.html" class="text-white" style="text-decoration: none;">Thanh toán</a></li>
+                    <li><a href="WebTMDT/html/ChinhSach.html" class="text-white" style="text-decoration: none;">Đổi trả</a></li>
+                </ul>
+            </div>
+            
+            <!-- Về chúng tôi -->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Về chúng tôi</h5>
+                <ul class="list-unstyled">
+                    <li><a href="WebTMDT/html/About.html" class="text-white" style="text-decoration: none;">Giới thiệu</a></li>
+                    <li><a href="WebTMDT/html/About.html" class="text-white" style="text-decoration: none;">Tầm nhìn</a></li>
+                </ul>
+                <h5 class="text-uppercase mt-3">THÔNG TIN LIÊN HỆ</h5>
+                <ul class="list-unstyled">
+                    <li><a href="WebTMDT/html/About.html" class="text-white" style="text-decoration: none;">HN Group</a></li>
+                    <li><a href="WebTMDT/html/About.html" class="text-white" style="text-decoration: none;">📞: 0365265817</a></li>
+                    <li><a href="WebTMDT/html/About.html" class="text-white" style="text-decoration: none;">Địa chỉ: Phường Tam Quan Nam, Thị xã Hoài Nhơn, tỉnh Bình Định</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2024 Bản quyền thuộc về HN Group
+    </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script src="WebTMDT/js/form.js"></script>
+</body>
+</html>

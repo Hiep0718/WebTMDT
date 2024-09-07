@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/menu.css">
+    <script src="/WebTMDT/js/jquery-3.7.1.min.js"></script>
+    <link rel="icon" href="../img/fn3-03.png" type="image/png">
+    <link rel="stylesheet" href="../css/chitietsanpham.css">
+    <style>
+        
+    </style> 
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+        <img src="../img/fn3-03.png" alt="" width="auto" height="65px" style="padding-left: 155px;">
+        <img src="../img/ocop11-removebg-preview.png" alt="" width="auto" height="50px" style="padding-left: 200px;">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto" style="padding-left: 10px;">
+                    <li class="nav-item" id="Home">
+                        <a class="nav-link" aria-current="page" href="/WebTMDT/index.html" style="font-weight: bold;">Trang chủ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link d-flex align-items-center" href="#" id="navbarDropdown" role="button">
+                            Danh Mục 
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../html/DanhMucSanPham.html">Tất cả</a></li>
+                            <li><a class="dropdown-item" href="../html/BanhKeo.html">Bánh, kẹo các loại</a></li>
+                            <li><a class="dropdown-item" href="../html/DauAn.html">Dầu ăn, nước chấm, gia vị</a></li>
+                            <li><a class="dropdown-item" href="../html/Ruou.html">Rượu</a></li>
+                            <li><a class="dropdown-item" href="../html/DongLanh.html">Sản phẩm đông mát</a></li>
+                            <li><a class="dropdown-item" href="../html/TraiCay.html">Trái cây</a></li>
+                            <li><a class="dropdown-item" href="../html/TraKho.html">Trà khô, túi lọc</a></li>
+                            <li><a class="dropdown-item" href="../html/Khac.html">Khác</a></li>
+                        </ul>
+                    </li>                                  
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/ChinhSach.html">Chính sách</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/About.html">Về chúng tôi</a>
+                    </li>
+                </ul>
+                <form class="d-flex mx-auto search-container">
+                    <div class="row">
+                        <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                        <span class="search-icon">
+                        <img src="../img/528-5289662_magnifier-glass-find-search-loop-blue-google-search-removebg-preview.png" alt="Search" width="30px" height="30px">
+                        </span>
+                    </div>
+                </form>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-light me-2" type="button">Đăng nhập</button>
+                    <button class="btn btn-outline-light me-3" type="button">Đăng ký</button>
+                    <!-- Giỏ hàng -->
+                    <div class="cart-icon">
+                        <a href="#"><img src="../img/gioHang-removebg-preview.png" alt="Cart" width="30" height="30"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-5">
+        <div class="row">
+            <h1 style="color: #005a23;">Chi tiết sản phẩm</h1>
+            <hr>
+            <!-- Hình ảnh sản phẩm -->
+            <div class="col-md-6">
+                <div class="product-image">
+                    <img id="main-image" src="../img/SanPham/RuouDongTrung/Rượu Đông trùng hạ thảo Lộc Tín.png" class="img-fluid" alt="Bánh tráng rong biển">
+                </div>
+                <!-- Thư viện hình ảnh sản phẩm -->
+                <div class="product-gallery d-flex mt-3">
+                    <img src="../img/SanPham/RuouDongTrung/Rượu Đông trùng hạ thảo Lộc Tín.png" class="img-thumbnail" alt="Product Thumbnail" onclick="changeImage(this)">
+                
+                </div>
+            </div>                      
+            <!-- Thông tin chi tiết sản phẩm -->
+            <div class="col-md-6">
+                <h1 class="product-title">Rượu Đông trùng hạ thảo Lộc Tín </h1>
+                <p class="product-price h4 text-success">700.000 VND</p>
+                <table class="custom-table">
+                    <tbody>
+                        <tr>
+                            <th>Xuất Xứ</th>
+                            <td>Tuy Phước</td>
+                        </tr>
+                        <tr>
+                            <th>Thể tích:</th>
+                            <td>500ml</td>
+                        </tr>
+                        <tr>
+                            <th>Không nên: </th>
+                            <td>dùng rượu cho trẻ em dưới 5 tuổi, người bị bệnh máu khó đông hoặc rối loạn đông màu, người chuẩn bị phẫu thuật, phụ nữ có thai và đang cho con bú cũng không nên sử dụng.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+                <!-- Second Table (Khuyến Mãi) -->
+                <div class="bg-light p-3 rounded border" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                    <h5 class="mb-3"><i class="bi bi-gift"></i> Khuyến Mãi</h5>
+                    <ul class="list-unstyled">
+                        <li>1️⃣ Miễn phí giao hàng 10km từ 2 thùng</li>
+                        <li>2️⃣ Miễn phí giao hàng với các đơn đặt hàng trên 1 triệu (khu vực Hoài Nhơn, Hoài Ân, Phù Mỹ, và Đức Phổ - Quảng Ngãi.)</li>
+                    </ul>
+                    <div class="Khuyenmai text-center fw-bold mt-3">
+                        GIẢM THÊM 10.000 TỔNG ĐƠN KHI MUA TẠI CỬA HÀNG
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-3">
+                        <h5 style="line-height: 40px;">Số lượng:</h5>
+                    </div>
+                    <div class="col">
+                        <div class="product__details__quantity">
+                            <div class="quantity">
+                                <div class="pro-qty">
+                                    <input type="text" value="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <h5 style="line-height: 40px;">Loại sản phẩm:</h5>
+                    </div>
+                    <div class="col">
+                        <div class="product__details__type">
+                            <select name="product-type" id="product-type" style="height: 50px; width: 100%;">
+                                <option value="defau" selected hidden>Chọn</option>
+                                <option value="Nua">Nửa Kg</option>
+                                <option value="Mot">Kg</option>
+                                <option value="C20">Cont 20</option>
+                                <option value="C40">Cont 40</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-cart btn-lg mt-4">Thêm vào giỏ hàng</button>
+                <button type="button" class="btn btn-buy btn-lg mt-4">Mua ngay</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <div class="container mt-5">
+        <hr>
+        <h4>Thông tin sản phẩm</h4>
+        <p><strong>Thể tích:</strong> 500ml</p>
+        <p><strong>Giá:</strong> 700.000 đồng</p>
+        <p><strong>Xuất xứ:</strong> Tuy Phước</p>
+    
+        <h6>Mô Tả Sản Phẩm</h6>
+        <p><strong>Thành phần dinh dưỡng:</strong></p>
+        <ul>
+            <li>Bồi bổ sức khỏe</li>
+            <li>Cải thiện hệ miễn dịch</li>
+            <li>Tăng cường chức năng hệ tim mạch</li>
+            <li>Cải thiện và tăng cường chức năng của thận</li>
+            <li>Bảo vệ và tăng cường chức năng cho lá phổi</li>
+            <li>Tăng cường chức năng sinh lý</li>
+            <li>Hỗ trợ làm đẹp cho phái nữ</li>
+        </ul>
+    
+        <h6>Công Dụng</h6>
+        <p><strong>Liều lượng sử dụng:</strong> Mỗi ngày nên uống 1-2 chén nhỏ khoảng 40ml trong hoặc sau bữa ăn.</p>
+        <p>Nên dùng vào buổi sáng trước khi ăn, hạn chế dùng vào buổi tối để tránh trường hợp mất ngủ do rượu.</p>
+        <p>Không nên dùng rượu cho trẻ em dưới 5 tuổi, người bị bệnh máu khó đông hoặc rối loạn đông máu, người chuẩn bị phẫu thuật, phụ nữ có thai và đang cho con bú cũng không nên sử dụng.</p>
+    
+        <h6>Thông Tin Liên Hệ</h6>
+        <p><strong>Hợp Tác Xã Nông Nghiệp Hữu Cơ Lộc Tín</strong></p>
+        <p><strong>Địa chỉ:</strong> Khu tái định cư thôn Quảng Tín, Xã Phước Lộc, Huyện Tuy Phước, Tỉnh Bình Định</p>
+        <p><strong>Điện thoại:</strong> 0905 527 879</p>
+        <hr>
+        <h4>Đánh giá và nhận xét</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Đánh giá trung bình</h5>
+                <div class="d-flex align-items-center">
+                    <span class="h3 mb-0 text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="ms-2">4.0/5.0 (5 đánh giá)</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h5>Viết nhận xét</h5>
+                <!-- Nút để hiển thị form -->
+                <button id="write-review-btn" class="btn btn-secondary">Viết nhận xét</button>
+                
+                <!-- Form viết nhận xét ban đầu bị ẩn -->
+                <form id="review-form" style="display: none;" class="mt-3">
+                    <div class="mb-3">
+                        <label for="user-name" class="form-label">Tên của bạn</label>
+                        <input type="text" class="form-control" id="user-name" required>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-4">
+                                <label for="user-rating" class="form-label" style="line-height: 48px;">Chất lượng sản phẩm</label>
+                            </div>
+                            <div class="rating col-4">
+                                <input type="radio" id="star5" name="rating" value="5" />
+                                <label for="star5" title="5 stars">&#9733;</label>
+                                <input type="radio" id="star4" name="rating" value="4" />
+                                <label for="star4" title="4 stars">&#9733;</label>
+                                <input type="radio" id="star3" name="rating" value="3" />
+                                <label for="star3" title="3 stars">&#9733;</label>
+                                <input type="radio" id="star2" name="rating" value="2" />
+                                <label for="star2" title="2 stars">&#9733;</label>
+                                <input type="radio" id="star1" name="rating" value="1" />
+                                <label for="star1" title="1 star">&#9733;</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="user-review" class="form-label">Nhận xét của bạn</label>
+                        <textarea class="form-control" id="user-review" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Gửi nhận xét</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="user-reviews mt-4">
+            <h5>Nhận xét gần đây</h5>
+            <div class="review mb-3">
+                <div class="d-flex align-items-center">
+                    <strong>Nguyễn Văn A</strong>
+                    <span class="ms-3 text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                </div>
+                <p class="mb-0">Sản phẩm rất tốt, mình sẽ mua thêm.</p>
+                <small class="text-muted">Ngày 31/08/2024</small>
+            </div>
+            <div class="review mb-3">
+                <div class="d-flex align-items-center">
+                    <strong>Trần Thị B</strong>
+                    <span class="ms-3 text-warning">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                </div>
+                <p class="mb-0">Chất lượng sản phẩm rất ổn, mình rất hài lòng.</p>
+                <small class="text-muted">Ngày 29/08/2024</small>
+            </div>
+            <!-- Thêm các nhận xét khác tại đây -->
+        </div>
+    </div> 
+    
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('write-review-btn').addEventListener('click', function() {
+            var form = document.getElementById('review-form');
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+        });
+    </script>
+    <!-- Footer -->
+    <footer class="footer-bg text-white text-center text-lg-start">
+        <div class="container p-4">
+            <div class="row">
+                <!-- Sản phẩm -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Sản phẩm</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#!" class="text-white" style="text-decoration: none;">Bánh, kẹo các loại</a></li>
+                        <li><a href="#!" class="text-white" style="text-decoration: none;">Dầu ăn, nước chấm, gia vị</a></li>
+                        <li><a href="#!" class="text-white" style="text-decoration: none;">Rượu</a></li>
+                        <li><a href="#!" class="text-white" style="text-decoration: none;">Sản phẩm đông mát</a></li>
+                        <li><a href="#!" class="text-white" style="text-decoration: none;">Trái cây</a></li>
+                        <li><a href="#!" class="text-white" style="text-decoration: none;">Trà khô, túi lọc</a></li>
+                        <li><a href="#!" class="text-white" style="text-decoration: none;">Khác</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Thương hiệu -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Thương hiệu</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#!" class="text-white" style="text-decoration: none;">Bà Điền</a></li>
+                        <li><a href="#!" class="text-white" style="text-decoration: none;">Sachi</a></li>
+                        <li><a href="#!" class="text-white" style="text-decoration: none;">Khánh Giang</a></li>
+                        <li><a href="#!" class="text-white" style="text-decoration: none;">Thành Tâm</a></li>
+                        <li><a href="#!" class="text-white" style="text-decoration: none;">Ngọc Nga</a></li>
+                        <li><a href="#!" class="text-white" style="text-decoration: none;">Khác</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Chính sách -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Chính sách</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../html/ChinhSach.html" class="text-white" style="text-decoration: none;">Giao hàng</a></li>
+                    <li><a href="../html/ChinhSach.html" class="text-white" style="text-decoration: none;">Thanh toán</a></li>
+                    <li><a href="../html/ChinhSach.html" class="text-white" style="text-decoration: none;">Đổi trả</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Về chúng tôi -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Về chúng tôi</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../html/About.html" class="text-white" style="text-decoration: none;">Giới thiệu</a></li>
+                        <li><a href="../html/About.html" class="text-white" style="text-decoration: none;">Tầm nhìn</a></li>
+                    </ul>
+                    <h5 class="text-uppercase mt-3">THÔNG TIN LIÊN HỆ</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../html/About.html" class="text-white" style="text-decoration: none;">HN Group</a></li>
+                        <li><a href="../html/About.html" class="text-white" style="text-decoration: none;">📞: 0365265817</a></li>
+                        <li><a href="../html/About.html" class="text-white" style="text-decoration: none;">Địa chỉ: Phường Tam Quan Nam, Thị xã Hoài Nhơn, tỉnh Bình Định</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2024 Bản quyền thuộc về HN Group
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/WebTMDT/js/chiTiet.js"></script>
+    <script>
+        // Lưu trữ ảnh trước đó
+        var previousImage = null;
+    
+        function changeImage(imgElement) {
+            var newSrc = imgElement.src;
+    
+            // Cập nhật ảnh lớn
+            document.getElementById('main-image').src = newSrc;
+    
+            // Xóa lớp 'selected' khỏi ảnh trước đó nếu có
+            if (previousImage) {
+                previousImage.classList.remove('selected');
+            }
+    
+            // Thêm lớp 'selected' vào ảnh hiện tại
+            imgElement.classList.add('selected');
+    
+            // Cập nhật ảnh trước đó
+            previousImage = imgElement;
+        }
+    </script>    
+</body>
+</html>

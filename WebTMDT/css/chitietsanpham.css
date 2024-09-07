@@ -1,0 +1,283 @@
+.btn-primary {
+    background-color: #00712D; /* Màu xanh chủ đạo đã chọn */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #005c22; /* Màu xanh đậm hơn khi hover */
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:active {
+    background-color: #004f1d; /* Màu xanh đậm hơn khi nhấn */
+    transform: scale(1);
+    box-shadow: none;
+}
+
+
+    .product-image {
+        border: 1px solid #ddd;
+        padding: 10px;
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+
+    .product-image img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .product-gallery img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .product-gallery img:hover {
+        transform: scale(1.1);
+    }
+
+    .product-title {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .product-price {
+        font-size: 2rem;
+        font-weight:bold ;
+    }
+
+    .product-gallery {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+    .product__details__quantity {
+        display: inline-block;
+        margin-right: 6px;
+    }
+    .pro-qty {
+        width: 140px;
+        height: 50px;
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        background: #f5f5f5;
+        margin-bottom: 5px;
+    }
+
+    .pro-qty input {
+        height: 100%;
+        width: 100%;
+        font-size: 16px;
+        color: #6f6f6f;
+        width: 50px;
+        border: none;
+        background: #f5f5f5;
+        text-align: center;
+    }
+
+    .pro-qty .qtybtn {
+        width: 35px;
+        font-size: 16px;
+        color: #6f6f6f;
+        cursor: pointer;
+        display: inline-block;
+    }
+    .product__details__type select {
+        height: 50px;
+        width: 140px;
+        padding: 0 15px;
+        background-color: #f8f8f8;
+        font-size: 16px;
+        text-align: center;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 0px solid red;
+    }
+
+    .product__details__type {
+        position: relative;
+        display: inline-block;
+    }
+
+    .product__details__type::after {
+        content: "";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        pointer-events: none;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px;
+    }
+
+
+    #write-review-btn {
+    border: 2px solid #00712D;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-weight: bold;
+    background-color: white;
+    color: #00712D;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#write-review-btn:hover {
+    background-color: #00712D;
+    color: white;
+}
+
+#review-form .form-label {
+    font-weight: bold;
+    color: #333;
+}
+
+#review-form .form-control,
+#review-form .form-select {
+    padding: 10px;
+    border: 2px solid #00712D;
+}
+
+#review-form .form-control:focus,
+#review-form .form-select:focus {
+    box-shadow: none;
+    border-color: #00712D;
+}
+
+#review-form button[type="submit"] {
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.user-reviews .review {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.user-reviews .review strong {
+    font-size: 1.1rem;
+    color: #00712D;
+}
+
+
+.btn-buy {
+    background-color: #00712D; /* Màu nền chính */
+    color: white; /* Màu chữ */
+    border: 2px solid #00712D; /* Đường viền trùng với màu nền */
+    border-radius: 50px; /* Bo tròn góc */
+    padding: 10px 30px; /* Khoảng cách bên trong nút */
+    font-weight: bold; /* Chữ in đậm */
+    font-size: 1.2rem; /* Kích thước chữ */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Hiệu ứng chuyển đổi */
+}
+
+.btn-buy:hover {
+    background-color: white; /* Đổi nền thành màu trắng khi hover */
+    color: #00712D; /* Đổi màu chữ thành màu nền chính khi hover */
+    border-color: #00712D; /* Đường viền vẫn giữ nguyên */
+}
+
+.btn-buy:active {
+    background-color: #005a23; /* Nền tối hơn khi nhấn nút */
+    border-color: #005a23; /* Đường viền cùng màu với nền khi nhấn nút */
+}
+
+.btn-cart {
+    background-color: #fff099; /* Màu nền vàng (vàng gold) */
+    color: #00712D; /* Màu chữ xanh lá cây */
+    border: 2px solid #FFD700; /* Đường viền trùng với màu nền */
+    border-radius: 50px; /* Bo tròn góc */
+    padding: 10px 30px; /* Khoảng cách bên trong nút */
+    font-weight: bold; /* Chữ in đậm */
+    font-size: 1.2rem; /* Kích thước chữ */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Hiệu ứng chuyển đổi */
+}
+
+.btn-cart:hover {
+    background-color: #00712D; /* Đổi nền thành màu xanh lá khi hover */
+    color: white; /* Đổi màu chữ thành trắng khi hover */
+    border-color: #00712D; /* Đường viền vẫn giữ nguyên */
+}
+
+.btn-cart:active {
+    background-color: #ccac00; /* Nền tối hơn khi nhấn nút */
+    border-color: #ccac00; /* Đường viền cùng màu với nền khi nhấn nút */
+}
+
+.rating {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    text-align: center;
+}
+
+.rating input[type="radio"] {
+    display: none;
+}
+
+.rating label {
+    font-size: 2rem;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.rating input[type="radio"]:checked ~ label {
+    color: #ffcc00;
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #ffcc00;
+}
+
+/* CSS để làm nổi bật ảnh nhỏ được chọn */
+.product-gallery .img-thumbnail.selected {
+    border: 2px solid #00712D; /* Màu sắc của viền ảnh khi chọn */
+}
+
+.custom-table {
+    width: 100%;
+    margin: 20px auto;
+    border: 2px solid #ddd; /* Thêm viền bao quanh bảng */
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng đổ bóng */
+}
+.custom-table th, .custom-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.custom-table th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+.custom-table tr:last-child td {
+    border-bottom: none;
+}
+
+.Khuyenmai{
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    border-radius: 10px;
+    background-color: rgb(25, 135, 84);
+    color: yellowgreen;
+}
