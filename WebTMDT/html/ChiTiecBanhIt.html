@@ -10,6 +10,7 @@
     <script src="/WebTMDT/js/jquery-3.7.1.min.js"></script>
     <link rel="icon" href="../img/fn3-03.png" type="image/png">
     <link rel="stylesheet" href="../css/chitietsanpham.css">
+    <link rel="stylesheet" href="../css/find.css">
     <style>
         
     </style> 
@@ -52,11 +53,12 @@
                 </ul>
                 <form class="d-flex mx-auto search-container">
                     <div class="row">
-                        <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                        <input id="searchInput" class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
                         <span class="search-icon">
-                        <img src="../img/528-5289662_magnifier-glass-find-search-loop-blue-google-search-removebg-preview.png" alt="Search" width="30px" height="30px">
+                            <img src="../img/528-5289662_magnifier-glass-find-search-loop-blue-google-search-removebg-preview.png" alt="Search" width="30px" height="30px">
                         </span>
                     </div>
+                    <ul id="searchResults" class="list-group"></ul>
                 </form>
                 <div class="d-flex align-items-center">
                     <button class="btn btn-outline-light me-2" type="button">Đăng nhập</button>
@@ -342,5 +344,6 @@
             previousImage = imgElement;
         }
     </script>    
+    <script src="../js/find.js"></script>
 </body>
 </html>

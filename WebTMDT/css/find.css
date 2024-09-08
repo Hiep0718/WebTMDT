@@ -7,7 +7,7 @@
 #searchResults {
     position: absolute; /* Đặt danh sách ở vị trí tuyệt đối so với khối chứa */
     top: 100%; /* Đặt danh sách ngay bên dưới ô tìm kiếm */
-    left: 0;
+    left: -10px;
     width: 100%; /* Để danh sách rộng bằng chiều rộng của ô tìm kiếm */
     background-color: white; /* Màu nền của danh sách kết quả */
     border: 1px solid #ccc; /* Đường viền của danh sách kết quả */
