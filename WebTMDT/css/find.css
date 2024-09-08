@@ -1,0 +1,29 @@
+/* Đảm bảo chứa các yếu tố tìm kiếm */
+.search-container {
+    position: relative; /* Để danh sách kết quả có thể được căn chỉnh chính xác */
+}
+
+/* Tạo kiểu dáng cho danh sách kết quả tìm kiếm */
+#searchResults {
+    position: absolute; /* Đặt danh sách ở vị trí tuyệt đối so với khối chứa */
+    top: 100%; /* Đặt danh sách ngay bên dưới ô tìm kiếm */
+    left: 0;
+    width: 100%; /* Để danh sách rộng bằng chiều rộng của ô tìm kiếm */
+    background-color: white; /* Màu nền của danh sách kết quả */
+    border: 1px solid #ccc; /* Đường viền của danh sách kết quả */
+    border-radius: 4px; /* Bo tròn góc của danh sách */
+    max-height: 300px; /* Chiều cao tối đa của danh sách để có thể cuộn */
+    overflow-y: auto; /* Hiển thị thanh cuộn nếu có nhiều kết quả */
+    z-index: 1000; /* Đảm bảo danh sách nằm trên các phần tử khác */
+    display: none; /* Ẩn danh sách khi không có kết quả */
+}
+
+/* Kiểu dáng cho các mục trong danh sách */
+.list-group-item {
+    padding: 10px; /* Khoảng cách bên trong mỗi mục */
+    cursor: pointer; /* Con trỏ chuột thay đổi khi di chuột qua mục */
+}
+
+.list-group-item:hover {
+    background-color: #f0f0f0; /* Màu nền khi di chuột qua mục */
+}
