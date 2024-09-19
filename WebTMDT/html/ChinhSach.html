@@ -115,8 +115,11 @@
                     <ul id="searchResults" class="list-group"></ul>
                 </form>
                 <div class="d-flex align-items-center">
-                    <button class="btn btn-outline-light me-2" type="button">Đăng nhập</button>
-                    <button class="btn btn-outline-light me-3" type="button">Đăng ký</button>
+                    <button class="btn btn-outline-light me-2" type="button" id="loginButton" onclick="window.location.href='../html/login.html'">Đăng nhập</button>
+                    <button class="btn btn-outline-light me-3" type="button" id="registerButton" onclick="window.location.href='../html/singup.html'">Đăng ký</button>
+                    <!-- Phần tử để hiển thị tên người dùng -->
+                    <span id="usernameDisplay" style="display:none;"></span>
+                    <a id="logoutButton" style="display:none;">Đăng xuất</a>
                     <!-- Giỏ hàng -->
                     <div class="cart-icon">
                         <a href="#"><img src="../img/gioHang-removebg-preview.png" alt="Cart" width="30" height="30"></a>
