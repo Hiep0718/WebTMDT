@@ -132,3 +132,8 @@ body {
     border-bottom: 1px solid #ddd; /* Tùy chọn: thêm đường viền dưới thanh điều hướng */
 }
 
+#logoutButton{
+    color: rgb(248, 81, 81);
+    font-style: italic;
+    cursor: pointer;
+}

@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="WebTMDT/css/form.css">
     <link rel="stylesheet" href="WebTMDT/css/home.css">
     <link rel="stylesheet" href="WebTMDT/css/find.css">
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"></script>
 
     <style>
         .carousel-item {
@@ -128,11 +125,11 @@
                 <ul id="searchResults" class="list-group"></ul>
             </form>
             <div class="d-flex align-items-center">
-                <button class="btn btn-outline-light me-2" type="button">Đăng nhập</button>
-                <button class="btn btn-outline-light me-3" type="button">Đăng ký</button>
-                <div id="userDisplayName" style="display: none; padding-left: 10px;">
-                    Xin chào, <span id="userName"></span>!
-                </div>
+                <button class="btn btn-outline-light me-2" type="button" id="loginButton" onclick="window.location.href='WebTMDT/html/login.html'">Đăng nhập</button>
+                <button class="btn btn-outline-light me-3" type="button" id="registerButton" onclick="window.location.href='WebTMDT/html/singup.html'">Đăng ký</button>
+                <!-- Phần tử để hiển thị tên người dùng -->
+                <span id="usernameDisplay" style="display:none;"></span>
+                <a id="logoutButton" style="display:none;">Đăng xuất</a>
                 <!-- Giỏ hàng -->
                 <div class="cart-icon">
                     <a href="#"><img src="WebTMDT/img/gioHang-removebg-preview.png" alt="Cart" width="30" height="30"></a>
@@ -459,87 +456,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 <script src="WebTMDT/js/form.js"></script>
 <script src="WebTMDT/js/find2.js"></script>
- <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "",
-      authDomain: "binhdinhmarketid.firebaseapp.com",
-      projectId: "binhdinhmarketid",
-      storageBucket: "binhdinhmarketid.appspot.com",
-      messagingSenderId: "250231330711",
-      appId: "1:250231330711:web:5443414264da910c6e56d2",
-      measurementId: "G-LRY1SRCES6"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    const auth = getAuth(app);
-
-    document.querySelector('.btn-outline-light.me-3').addEventListener('click', function() {
-      document.getElementById('registerForm').style.display = 'block';
-      document.getElementById('loginForm').style.display = 'none';
-    });
-
-    document.querySelector('.btn-outline-light.me-2').addEventListener('click', function() {
-      document.getElementById('loginForm').style.display = 'block';
-      document.getElementById('registerForm').style.display = 'none';
-    });
-
-    document.getElementById('registerButton').addEventListener('click', register);
-    document.getElementById('loginButton').addEventListener('click', login);
-
-    async function register() {
-      const email = document.getElementById('registerEmail').value;
-      const password = document.getElementById('registerPassword').value;
-
-      try {
-        await createUserWithEmailAndPassword(auth, email, password);
-        alert('Đăng ký thành công!');
-        document.getElementById('registerForm').style.display = 'none';
-      } catch (error) {
-        alert('Lỗi đăng ký: ' + error.message);
-      }
-    }
-
-    async function login() {
-      console.log('Login button clicked');
-      const email = document.getElementById('loginEmail').value;
-      const password = document.getElementById('loginPassword').value;
-
-      try {
-        await signInWithEmailAndPassword(auth, email, password);
-        // Sau khi đăng nhập thành công, ẩn nút đăng nhập/đăng ký và hiển thị tên người dùng
-        updateUIAfterLogin(auth.currentUser);
-        alert('Đăng nhập thành công!');
-      } catch (error) {
-        alert('Lỗi đăng nhập: ' + error.message);
-      }
-    }
-    // Cập nhật UI sau khi đăng nhập
-    function updateUIAfterLogin(user) {
-    if (user) {
-        // Ẩn nút đăng nhập và đăng ký
-        document.querySelector('.btn-outline-light.me-2').style.display = 'none';
-        document.querySelector('.btn-outline-light.me-3').style.display = 'none';
-        
-        // Hiển thị tên người dùng
-        document.getElementById('userDisplayName').style.display = 'block';
-        document.getElementById('userName').textContent = user.email; // Hoặc sử dụng user.displayName nếu có
-        
-        document.getElementById('loginForm').style.display = 'none';
-    }
-    }
-    onAuthStateChanged(auth, user => {
-      if (user) {
-        console.log('Đã đăng nhập:', user.email);
-      } else {
-        console.log('Chưa đăng nhập');
-      }
-    });
-  </script>
-   
+<script src="WebTMDT/js/load.js"></script>
 </body>
 </html>
